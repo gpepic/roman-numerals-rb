@@ -1,4 +1,4 @@
-def roman_numerals(number)
+def roman_numerals(input)
   symbols = [
     [1000, 'M'],
     [900, 'CM'],
@@ -15,22 +15,34 @@ def roman_numerals(number)
     [1, 'I']
   ]
 
-  roman_numerals = []
-
-  symbols.each do |value, symbol|
-    until number < value
-      roman_numerals.push(symbol)
-      number = number - value
+  number_output = 0
+  symbol_output =[]
+  if input.instance_of?(String)
+    until input.length == 0
+      symbols.each do |value, symbol|
+        if input.slice(0, 2) == symbol
+          number_output = number_output + value
+          input.slice!(0, 2)
+        elsif input.slice(0) == symbol
+          number_output = number_output + value
+          input.slice!(0)
+        end
+      end
     end
+    return number_output
+  else
+    symbols.each do |value, symbol|
+      until input < value
+        symbol_output.push(symbol)
+        input = input - value
+      end
+    end
+    return symbol_output.join()
   end
-
-  roman_numerals.join()
 
 end
 
-puts roman_numerals(2)
-puts roman_numerals(4)
-puts roman_numerals(8)
-puts roman_numerals(9)
-puts roman_numerals(3999)
-
+puts roman_numerals('III')
+puts roman_numerals('IX')
+puts roman_numerals('IX')
+puts roman_numerals('MMMCMXCIX')

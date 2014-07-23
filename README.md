@@ -1,5 +1,5 @@
-Roman Numeral Converter
-=========================
+Roman Numeral Conversion Tool
+===================================
 
 #Authors:
 
@@ -10,10 +10,10 @@ Roman Numeral Converter
 7/23/2014
 
 #Version:
-V1.0.0.0
+V2.0.0.0
 
 #Description:
-This Ruby program will convert numbers given into Roman Numerals.
+This Ruby program will convert numbers given into Roman Numerals, and Roman Numerals into numbers up to 3999 or MMMCMXCIX.
 
 © 2014
 
